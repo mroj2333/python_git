@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        li{
+            list-style: -moz-ethiopic-numeric;
+        }
+        p{
+            font-size: 30px;
+            line-height: 10px;
+        }
+    </style>
+</head>
+<body>
+<a href="#">#</a>
+<ul>
+    <p>图书信息</p>
+    {%for book in books%}
+        <li>{{ book }}</li>
+    {% endfor %}
+</ul>
+
+<ul>
+    <p>人物信息</p>
+    {% for people in peoples %}
+        <li>{{ people }}</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
