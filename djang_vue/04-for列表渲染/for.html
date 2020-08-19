@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-for</title>
+    <!-- 1.导入Vue -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <!-- 2.定义一个标签 需要给标签添加id -->
+    <div id="app">
+        <span>{{message}}</span>
+        <hr>
+        <!-- {{items}}可以直接显示数组 -->
+        <ul>
+            <!-- <li v-for='item in items'>{{item}}</li> -->
+
+            <!-- 显示列表内容的索引 -->
+            <!-- <li v-for='(item, index) in items'>{{index}}~~{{item}}</li> -->
+            <li v-for='(item, index) in items'>{{index+1}}~~{{item}}</li>
+        </ul>
+        <hr>
+        <ul>
+            <!-- 对对象进行遍历，会输出对象中的value -->
+            <li v-for='item in object'>{{item}}</li>
+            <br>
+
+            <!-- 对key和value同时进行遍历 -->
+            <li v-for='(value, key) in object'>{{key}}:{{value}}</li>
+
+        </ul>
+        <hr>
+        <ul>
+            <li v-for='todo in todos'>{{todo.title}}&nbsp;&nbsp;&nbsp;{{todo.author}}&nbsp;&nbsp;&nbsp;{{todo.publishedAt}}</li>
+        </ul>
+    </div>
+</body>
+<!-- 3.创建Vue实例 -->
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello',
+            // items:[1,2,3,4,5],
+            items:['python','mysql','linux','html','js','css'],
+            // 对象
+            object: {
+              title: 'How to do lists in Vue',
+              author: 'Jane Doe',
+              publishedAt: '2016-04-10'
+            },
+
+            todos: [
+               {
+                title: 'Vue',
+                author: 'Jane Doe',
+                publishedAt: '2016-04-10'
+              },
+              {
+                title: 'python',
+                author: 'Ricky',
+                publishedAt: '2019-04-10'
+              },
+              {
+                title: 'itcast',
+                author: 'itcast',
+                publishedAt: '2006-05-08'
+              }
+            ],
+        }
+    })
+</script>
+</html>
