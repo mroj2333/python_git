@@ -1,7 +1,9 @@
 from django.conf.urls import url
 from . import views
+from django.urls import path
 
-urlurlpatterns = [
-    url(r'^login/$', views.LoginView.as_view()),
+urlpatterns = [
+    path('login/',views.LoginView.as_view()),
+    path('rece/', views.ReceiveView.as_view()),
 
-    ]
+]
