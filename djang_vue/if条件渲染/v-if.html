@@ -12,8 +12,16 @@
         <span>{{message}}</span>
         <a href="#" v-if='islogin'>欢迎你归来</a>
         <hr>
+        <!-- v-if与v-else必须紧挨着 -->
         <a href="#" v-if='level==1'>青铜</a>
-        <a href="#" v-else>白银</a>
+        <!-- <a href="#">~~~</a> -->
+        <a href="#" v-else-if='level==2'>白银</a>
+        <a href="#" v-else>王者</a>
+        
+        <hr>
+        <span v-if='seen'>v-if</span>
+        <br>
+        <span v-show='seen'>v-show</span>
     </div>
 </body>
 <!-- 3.创建Vue实例 -->
@@ -26,6 +34,9 @@
             islogin:false,
             // level:1,
             level:2,
+            // true两个都会显示
+            // seen:true, false的时间v-show会将css的display的属性设置为None，v-if则不会显示
+            seen:false,
         }
     })
 </script>
