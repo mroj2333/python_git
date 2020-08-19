@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>v-bind</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!-- 原来的实现方式 -->
+        <!-- <a href="https://www.baidu.com">戳我有惊喜</a> -->
+
+        <!-- Vue中v-bind的实现 -->
+        <a v-bind:href='url'>戳我有惊喜</a>
+        <br>
+
+        <!-- v-bind实现鼠标聚焦显示时间(完整语法) -->
+        <span v-bind:title='showmessage'>鼠标放在这里</span>
+        <br>
+        <!-- v-bind的简写 -->
+        <span :title='showmessage'>这里这里</span>
+
+    </div>
+</body>
+<script>
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            url:'https://www.baidu.com',
+            showmessage:'当前的时间是：' + new Date().toLocaleString(),
+        }
+    })
+</script>
+</html>
