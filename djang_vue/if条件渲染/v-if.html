@@ -10,6 +10,10 @@
     <!-- 2.定义一个标签 需要给标签添加id -->
     <div id="app">
         <span>{{message}}</span>
+        <a href="#" v-if='islogin'>欢迎你归来</a>
+        <hr>
+        <a href="#" v-if='level==1'>青铜</a>
+        <a href="#" v-else>白银</a>
     </div>
 </body>
 <!-- 3.创建Vue实例 -->
@@ -18,6 +22,10 @@
         el:'#app',
         data:{
             message:'Hello',
+            // islogin:true,
+            islogin:false,
+            // level:1,
+            level:2,
         }
     })
 </script>
